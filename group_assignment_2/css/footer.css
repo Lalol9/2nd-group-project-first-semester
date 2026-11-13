@@ -1,4 +1,19 @@
 footer {
   background-color: blueviolet;
   height: 20vh;
+
+  display: flex;
+  justify-content: center;
+}
+
+.footer__image-count {
+  background-color: gray;
+  font-size: var(--text-size-xl);
+  height: 50px;
+  width: 100px;
+  border-radius: var(--radius-xs);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
