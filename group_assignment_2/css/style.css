@@ -48,7 +48,9 @@ body {
 
 .main-content__image {
   width: 100%;
-  height: auto;
+  height: 100%;
+  max-height: 50vh;
+  object-fit: contain;
 }
 
 .main-content__caption {
