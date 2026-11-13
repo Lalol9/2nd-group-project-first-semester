@@ -9,15 +9,42 @@
     <link rel="stylesheet" href="./css/style.css" />
     <link rel="stylesheet" href="./css/footer.css" />
 
-    <title>Document</title>
+    <title>Slideshow</title>
   </head>
   <body>
+    <!-- header -------------------------------------------------------------- -->
     <header><h1 class="header-title">Slideshow</h1></header>
+    <!-- main ----------------------------------------------------------------- -->
     <main class="main-content">
-      <div class="main-content__left"></div>
-      <div class="main-content__center"></div>
-      <div class="main-content__right"></div>
+      <div class="main-content__left">
+        <img
+          class="main-content__arrow"
+          src="./assets/icons/arrow_back.svg"
+          alt="back arrow"
+        />
+      </div>
+      <div class="main-content__center">
+        <!-- TODO Replace image with actual image and write better alt text.  -->
+        <img
+          class="main-content__image"
+          src="../project_details/flowchart.PNG"
+          alt="Really cool image"
+        />
+        <p class="main-content__center__text">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt nesciunt
+          minus beatae possimus laboriosam vero reiciendis animi facere nihil
+          et!
+        </p>
+      </div>
+      <div class="main-content__right">
+        <img
+          class="main-content__arrow"
+          src="./assets/icons/arrow_forward.svg"
+          alt="forwards arrow"
+        />
+      </div>
     </main>
+    <!-- footer ---------------------------------------------------------------- -->
     <footer class="footer"></footer>
     <script src="./js/app.js"></script>
   </body>
