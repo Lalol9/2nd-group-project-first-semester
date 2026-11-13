@@ -1,21 +1,26 @@
 footer {
-  background-color: blueviolet;
-  height: 20vh;
+  background-color: var(--color-background-main);
+  height: 15vh;
 
   display: flex;
   justify-content: center;
 }
 
 .footer__image-count {
-  background-color: gray;
+  background-color: var(--color-background-secondary);
   font-size: var(--text-size-xl);
-  height: 50px;
-  width: 100px;
-  border-radius: var(--radius-xs);
+
+  /* Litt usikker på om hele footer'n skulle være blå med nummer i midten eller om det
+     ble kuket til etter at jeg fikset merge confliktene >_< 
+     Har kommentert ut alt som ikke trengs hvis footer'n skall se sånn ut. Er bare å slette
+     de tre kommenterte linjene nedenfor hvis det ser greit ut :p */
+
+  /* height: 50px; */
+  /* width: 100px; */
+  /* border-radius: var(--radius-xs); */
 
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: var(--color-background-secondary);
   width: 100%;
 }
