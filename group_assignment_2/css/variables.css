@@ -1,16 +1,29 @@
+@font-face {
+  font-family: "Cormorant";
+  src: url("../assets/fonts/Cormorant-VariableFont_wght.ttf");
+}
+
+@font-face {
+  font-family: "Karla";
+  src: url("../assets/fonts/Karla-VariableFont_wght.ttf");
+}
+
 :root {
   /* Background Colors */
-  --color-background-primary: #faf8f0;
-  --color-background-secondary: #e0dad1;
-  --color-background-tertiary: #9b8876;
+  --color-background-primary: #faf6ee;
+  --color-background-secondary: #234a48;
+  --color-background-tertiary: #f0ebe0;
 
   /* Hover Color */
-  --color-button: #e0dad1;
-  --color-button-hover: #988876;
+  --color-button-primary: #cba36d;
+  --color-button-secondary: #234a48;
+  --color-button-hover:#faf6ee;
+  --color-text-hover: #cba36d;
 
   /* Text Color */
-  --color-text-primary: #756452;
-  --color-text-secondary: #988876;
+  --color-text-primary: #234a48;
+  --color-text-secondary: #faf6ee;
+  --color-text-tertiary: #cba36d;
 
   /* Spacing */
   --spacing-xs: 0.5rem;
@@ -30,6 +43,8 @@
   --radius-2xl: 3rem;
 
   /* Typography */
+  --font-primary: "Cormorant";
+  --font-secondary: "Karla";
 
   /* Text Size */
   --text-size-xs: 0.5rem;
