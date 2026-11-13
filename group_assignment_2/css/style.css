@@ -1,10 +1,11 @@
 .main-content {
-  background-color: aquamarine;
+  background-color: var(--color-background-primary);
   width: 100vw;
-  height: 60vh;
+  height: 75vh;
 
   display: grid;
   grid-template-columns: repeat(3, 1fr);
+  padding-top: var(--spacing-xl);
 }
 
 .main-content__left {
@@ -14,12 +15,13 @@
 }
 
 .main-content__arrow {
-  background-color: black;
+  background-color: var(--color-button-primary);
   border-radius: var(--radius-md);
+  transition: background-color 0.3s ease;
 }
 
 .main-content__arrow:hover {
-  background-color: gray;
+  background-color: var(--color-background-secondary);
   cursor: pointer;
 }
 
@@ -30,10 +32,17 @@
 
   justify-content: center;
   align-items: center;
+  background-color: var(--color-background-tertiary);
+  padding: var(--spacing-lg);
 }
 
 .main-content__image {
   max-width: 500px;
+}
+
+.main-content__caption{
+  font-family: var(--font-primary);
+  color: var(--color-text-primary);
 }
 
 .main-content__right {
