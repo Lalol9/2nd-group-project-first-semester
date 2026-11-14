@@ -17,7 +17,7 @@ const captions = [
   "<strong>GINKGO TREE</strong>",
   "<strong>NORTHERN BLUE FLAG IRIS</strong>",
   "<strong>HUMMINGBIRD FUCHSIA</strong>",
-  "<strong>WHITER WATER LILY</strong>"
+  "<strong>WHITE WATER LILY</strong>"
 ];
 
 const descriptions = [
