@@ -1,8 +1,8 @@
-html{
+html {
   overscroll-behavior: none;
 }
 
-body{
+body {
   width: 100%;
   min-height: 100vh;
   background-color: var(--color-background-primary);
@@ -10,7 +10,8 @@ body{
 
 .main-content {
   width: 100vw;
-  /* height: 75vh; */
+  height: 75vh;
+  min-height: 450px;
 
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -47,8 +48,9 @@ body{
 
 .slides__image img{
   width: 100%;
-  height: auto;
-
+  height: 100%;
+  max-height: 50vh;
+  object-fit: contain;
 }
 
 .slides__caption{

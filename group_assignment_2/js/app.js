@@ -1,5 +1,3 @@
-console.log(document);
-
 // Image, captions and description array
 const images = [
   "./assets/images/TurksCapLily.jpeg",
@@ -34,8 +32,9 @@ const descriptions = [
 ]
 
 // Assigning variable for buttons
-const previous = document.querySelector(".prev")
-const next = document.querySelector(".next")
+const arrowLeft = document.querySelector(".arrow-left");
+const arrowRight = document.querySelector(".arrow-right");
+const imageCounter = document.querySelector(".footer__image-count");
 
 // Assigning variables for image, caption and description divs
 const imageContainer = document.querySelector(".slides__image");
@@ -51,7 +50,7 @@ descriptionContainer.innerHTML = myDescription;
 
 // Adding functionality to buttons
 let counter = 0;
-previous.addEventListener("click", function (){
+arrowLeft.addEventListener("click", function (){
   if (counter > 0 && counter < images.length){
     counter--;
     mySlide = images[counter];
@@ -63,7 +62,7 @@ previous.addEventListener("click", function (){
   }
 });
 
-next.addEventListener("click", function(){
+arrowRight.addEventListener("click", function(){
   if (counter < images.length-1){
     counter++;
     mySlide = images[counter];
@@ -75,3 +74,21 @@ next.addEventListener("click", function(){
   }
 });
 
+let imageIndex = 1;
+arrowLeft.addEventListener("click", (previousImage) => {
+  imageIndex = imageIndex - 1;
+  if (imageIndex < 1) {
+    imageIndex = 10;
+  }
+  imageCounter.textContent = `${imageIndex}/10`;
+  //   console.log(imageIndex);
+});
+
+arrowRight.addEventListener("click", () => {
+  imageIndex = imageIndex + 1;
+  if (imageIndex > 10) {
+    imageIndex = 1;
+  }
+  imageCounter.textContent = `${imageIndex}/10`;
+  //   console.log(imageIndex);
+});

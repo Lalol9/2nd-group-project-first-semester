@@ -1,7 +1,12 @@
 header {
   background-color: var(--color-background-secondary);
   width: 100%;
-  padding: var(--spacing-lg) var(--spacing-xl);
+  height: 10vh;
+
+  /* Ble problemer med at nettsiden ble for lang for browser vinduet :S
+     Har delt opp høyden på header, main, og footer nå slik at de tilsammen blir 100vh og skaleres dynamisk.
+    */
+  /* padding: var(--spacing-lg) var(--spacing-xl); */
 
   display: flex;
   justify-content: center;
