@@ -43,6 +43,7 @@ const descriptionContainer = document.querySelector(".slides__description")
 let mySlide = images[0];
 let myCaption = captions[0];
 let myDescription = descriptions[0];
+let counter = 0;
 
 // Assigning element locations
 imageContainer.innerHTML = '<img src="'+mySlide+'" />';
@@ -50,8 +51,7 @@ captionContainer.innerHTML = myCaption;
 descriptionContainer.innerHTML = myDescription;
 
 // Adding functionality to buttons
-let counter = 0;
-arrowLeft.addEventListener("click", function (){
+arrowLeft.addEventListener("click", ()=>{
   if (counter > 0 && counter < images.length){
     counter--;
     mySlide = images[counter];
@@ -63,7 +63,7 @@ arrowLeft.addEventListener("click", function (){
   }
 });
 
-arrowRight.addEventListener("click", function(){
+arrowRight.addEventListener("click", ()=>{
   if (counter < images.length-1){
     counter++;
     mySlide = images[counter];
@@ -79,17 +79,17 @@ let imageIndex = 1;
 arrowLeft.addEventListener("click", (previousImage) => {
   imageIndex = imageIndex - 1;
   if (imageIndex < 1) {
-    imageIndex = 10;
+    imageIndex = 8;
   }
-  imageCounter.textContent = `${imageIndex}/10`;
+  imageCounter.textContent = `${imageIndex}/8`;
   //   console.log(imageIndex);
 });
 
 arrowRight.addEventListener("click", () => {
   imageIndex = imageIndex + 1;
-  if (imageIndex > 10) {
+  if (imageIndex > 8) {
     imageIndex = 1;
   }
-  imageCounter.textContent = `${imageIndex}/10`;
+  imageCounter.textContent = `${imageIndex}/8`;
   //   console.log(imageIndex);
 });
