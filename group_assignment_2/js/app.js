@@ -44,14 +44,22 @@ let mySlide = images[0];
 let myCaption = captions[0];
 let myDescription = descriptions[0];
 let counter = 0;
+let imageIndex = 1;
 
 // Assigning element locations
 imageContainer.innerHTML = '<img src="'+mySlide+'" />';
 captionContainer.innerHTML = myCaption;
 descriptionContainer.innerHTML = myDescription;
 
-// Adding functionality to buttons
-arrowLeft.addEventListener("click", ()=>{
+// Adding navigation to buttons
+arrowLeft.addEventListener ("click", prevSlide);
+document.addEventListener ("keydown", (event) => {
+  if (event.key === "ArrowLeft") {
+    prevSlide();
+  }
+});
+
+function prevSlide() {
   if (counter > 0 && counter < images.length){
     counter--;
     mySlide = images[counter];
@@ -61,9 +69,22 @@ arrowLeft.addEventListener("click", ()=>{
     captionContainer.innerHTML = myCaption;
     descriptionContainer.innerHTML = myDescription;
   }
+
+   imageIndex = imageIndex - 1;
+  if (imageIndex < 1) {
+    imageIndex = 8;
+  }
+  imageCounter.textContent = `${imageIndex}/8`;
+};
+
+arrowRight.addEventListener ("click", nextSlide);
+document.addEventListener ("keydown", (event) => {
+  if (event.key === "ArrowRight") {
+    nextSlide();
+  }
 });
 
-arrowRight.addEventListener("click", ()=>{
+function nextSlide() {
   if (counter < images.length-1){
     counter++;
     mySlide = images[counter];
@@ -73,23 +94,32 @@ arrowRight.addEventListener("click", ()=>{
     captionContainer.innerHTML = myCaption;
     descriptionContainer.innerHTML = myDescription;
   }
-});
 
-let imageIndex = 1;
-arrowLeft.addEventListener("click", (previousImage) => {
-  imageIndex = imageIndex - 1;
-  if (imageIndex < 1) {
-    imageIndex = 8;
-  }
-  imageCounter.textContent = `${imageIndex}/8`;
-  //   console.log(imageIndex);
-});
-
-arrowRight.addEventListener("click", () => {
   imageIndex = imageIndex + 1;
   if (imageIndex > 8) {
     imageIndex = 1;
   }
   imageCounter.textContent = `${imageIndex}/8`;
+};
+
+
+// Slo koden sammen for syns skyld B) bevarte originalen om du enda vil fikle med den ofc ofc 
+
+// let imageIndex = 1;
+// arrowLeft.addEventListener("click", (previousImage) => {
+//   imageIndex = imageIndex - 1;
+//   if (imageIndex < 1) {
+//     imageIndex = 8;
+//   }
+//   imageCounter.textContent = `${imageIndex}/8`;
   //   console.log(imageIndex);
-});
+// });
+
+// arrowRight.addEventListener("click", () => {
+//   imageIndex = imageIndex + 1;
+//   if (imageIndex > 8) {
+//     imageIndex = 1;
+//   }
+//   imageCounter.textContent = `${imageIndex}/8`;
+//   //   console.log(imageIndex);
+// });
