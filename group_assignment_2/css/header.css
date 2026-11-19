@@ -3,11 +3,6 @@ header {
   width: 100%;
   height: 10vh;
 
-  /* Ble problemer med at nettsiden ble for lang for browser vinduet :S
-     Har delt opp høyden på header, main, og footer nå slik at de tilsammen blir 100vh og skaleres dynamisk.
-    */
-  /* padding: var(--spacing-lg) var(--spacing-xl); */
-
   display: flex;
   justify-content: center;
   align-items: center;
@@ -17,4 +12,11 @@ header {
   font-size: var(--text-size-2xl);
   font-family: var(--font-primary);
   color: var(--color-text-secondary);
+}
+
+/* Media Queries */
+@media only screen and (max-width: 500px) {
+  .header-title {
+    font-size: var(--text-size-xl);
+  }
 }

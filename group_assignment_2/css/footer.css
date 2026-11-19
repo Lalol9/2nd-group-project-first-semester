@@ -4,14 +4,24 @@
   background-color: var(--color-background-secondary);
 }
 
-.footer__content{
+.footer__content {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
 }
 
-.footer__disclaimer{
+.footer__disclaimer {
   font-size: var(--text-size-sm);
   color: var(--color-text-secondary);
+  text-align: center;
+}
+
+@media screen and (max-height: 850px) and (orientation: landscape) {
+  .footer {
+    padding: var(--spacing-xs);
+  }
+  .footer__icon {
+    display: none;
+  }
 }
