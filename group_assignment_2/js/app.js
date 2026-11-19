@@ -68,6 +68,14 @@ function prevSlide() {
     imageContainer.innerHTML = '<img src="'+mySlide+'" />';
     captionContainer.innerHTML = myCaption;
     descriptionContainer.innerHTML = myDescription;
+  } else if (counter === 0) {
+    counter = images.length - 1;
+    mySlide = images[counter];
+    myCaption = captions[counter];
+    myDescription = descriptions[counter];
+    imageContainer.innerHTML = '<img src="'+mySlide+'" />';
+    captionContainer.innerHTML = myCaption;
+    descriptionContainer.innerHTML = myDescription;
   }
 
    imageIndex = imageIndex - 1;
@@ -93,7 +101,15 @@ function nextSlide() {
     imageContainer.innerHTML = '<img src="'+mySlide+'" />';
     captionContainer.innerHTML = myCaption;
     descriptionContainer.innerHTML = myDescription;
-  }
+  } else if (counter === images.length - 1) {
+    counter = 0;
+    mySlide = images[counter];
+    myCaption = captions[counter];
+    myDescription = descriptions[counter];
+    imageContainer.innerHTML = '<img src="'+mySlide+'" />';
+    captionContainer.innerHTML = myCaption;
+    descriptionContainer.innerHTML = myDescription;
+    }
 
   imageIndex = imageIndex + 1;
   if (imageIndex > 8) {
