@@ -117,25 +117,3 @@ function nextSlide() {
   }
   imageCounter.textContent = `${imageIndex}/8`;
 };
-
-
-// Slo koden sammen for syns skyld B) bevarte originalen om du enda vil fikle med den ofc ofc 
-
-// let imageIndex = 1;
-// arrowLeft.addEventListener("click", (previousImage) => {
-//   imageIndex = imageIndex - 1;
-//   if (imageIndex < 1) {
-//     imageIndex = 8;
-//   }
-//   imageCounter.textContent = `${imageIndex}/8`;
-  //   console.log(imageIndex);
-// });
-
-// arrowRight.addEventListener("click", () => {
-//   imageIndex = imageIndex + 1;
-//   if (imageIndex > 8) {
-//     imageIndex = 1;
-//   }
-//   imageCounter.textContent = `${imageIndex}/8`;
-//   //   console.log(imageIndex);
-// });

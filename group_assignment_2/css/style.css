@@ -3,7 +3,7 @@ html {
 }
 
 body {
-  width: 100vw;
+  width: 100%;
   height: 100vh;
   background-color: var(--color-background-primary);
 
@@ -13,20 +13,26 @@ body {
 }
 
 .main-content {
-  width: 100vw;
-  max-width: 100vw;
-  min-height: 450px;
-
-  display: flex;
-  justify-content: space-between;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 3fr 1fr;
+  grid-auto-flow: column;
   flex-grow: 1;
-
-  padding: var(--spacing-2xl) 0;
+  padding: var(--spacing-2xl);
 }
 
-.main-content__left,
-.main-content__right {
+.main-content__left{
+  grid-column: 1/2;
   display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1;
+}
+.main-content__right {
+  grid-column: 3/4;
+  display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   flex-grow: 1;
@@ -44,58 +50,52 @@ body {
 }
 
 .main-content__center {
-  background-color: var(--color-background-tertiary);
-  padding: var(--spacing-xl);
-
+  grid-column: 2/3;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   gap: var(--spacing-sm);
 }
 
 .slides-wrapper {
-  max-width: 50vw;
+  background-color: var(--color-background-tertiary);
   display: flex;
   flex-direction: row;
-  gap: var(--spacing-sm);
+  align-items: center;
 }
 
 .slides__image {
-  max-width: 75vw;
+  height: 100%;
   max-height: 55vh;
-  object-fit: contain;
-
   display: flex;
   align-items: center;
 }
 .slides__image img {
-  max-width: 100%;
-  max-height: 100%;
-  height: auto;
+  width: 100%;
+  height: 100%;
   object-fit: contain;
 }
 
 .slides__text {
   color: var(--color-text-primary);
-  padding-left: var(--spacing-md);
-  max-width: 300px;
-
+  max-width: 320px;
+  padding: var(--spacing-lg);
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-between;
 }
 
 .slides__caption {
   font-family: var(--font-secondary);
-  font-size: var(--text-size-xl);
+  font-size: var(--text-size-lg);
   font-weight: 500;
   margin-bottom: var(--spacing-md);
 }
 
 .slides__description {
   font-family: var(--font-primary);
-  font-size: var(--text-size-lg);
+  font-size: var(--text-size-md);
 }
 
 .image-count {
@@ -121,25 +121,15 @@ body {
   .slides-wrapper {
     flex-direction: column;
     align-items: center;
-    max-width: 70vw;
-    padding-left: 0;
+    max-width: 80vw;
   }
   .slides__text {
     max-width: 600px;
-    padding: 0;
+    padding-top: var(--spacing-md);
   }
-  .main-content__left,
-  .main-content__right {
-    width: 0;
-    flex-grow: 0;
-  }
-  .arrow-left {
-    position: relative;
-    left: 7vw;
-  }
-  .arrow-right {
-    position: relative;
-    right: 7vw;
+  .main-content{
+    padding: var(--spacing-lg) 0;
+    grid-template-columns: 0.5f 3f 0.5f;
   }
 }
 
@@ -153,7 +143,6 @@ body {
   }
   .main-content__left,
   .main-content__right {
-    max-width: 0;
     flex-grow: none;
   }
   .main-content__center {
@@ -179,25 +168,17 @@ body {
   .slides__description {
     font-size: var(--text-size-md);
   }
-  .arrow-left {
-    position: relative;
-    left: 10vw;
-  }
-  .arrow-right {
-    position: relative;
-    right: 10vw;
-  }
 }
 
 /* for phones */
 
 @media screen and (max-width: 700px) {
   .main-content {
+    grid-template-columns: repeat(2, 1fr);
     flex-grow: 1;
   }
   .main-content__center {
-    max-width: 90vw;
-    padding: var(--spacing-md);
+    grid-column: 1/3;
     justify-content: space-between;
     gap: var(--spacing-sm);
   }
@@ -214,20 +195,19 @@ body {
   .slides__description {
     font-size: var(--text-size-md);
   }
-  .main-content__left,
+  .main-content__left{
+    height: 0;
+    justify-content: end;
+    grid-column: 1/2;
+  }
+
   .main-content__right {
-    width: 0;
-  }
-  .arrow-left {
-    position: relative;
-    left: 7vw;
-  }
-  .arrow-right {
-    position: relative;
-    right: 7vw;
+    height: 0;
+    justify-content: end;
+    grid-column: 2/3;
   }
   .image-count {
-    height: 50px;
+    height: 48px;
     width: 100px;
   }
 }
